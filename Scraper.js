@@ -36,17 +36,14 @@ getParagraphs().forEach(p =>
     if(isStart(p))
     {
         currentHexgramTextLines = [p]
-        console.log(currentHexgramTextLines[0].innerText)
     }
     else if(isEnd(p))
     {
         hexgramsTextLines.push(currentHexgramTextLines)
-        console.log('hexgramsTextLines', hexgramsTextLines.length)
     }
     else
     {
         currentHexgramTextLines.push(p)
-        console.log('currentHexgramTextLines', currentHexgramTextLines.length)
     }
 })
 
