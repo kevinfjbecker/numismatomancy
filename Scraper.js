@@ -7,35 +7,52 @@ const getParagraphs = () => [...document.querySelectorAll('blockquote > p')]
 
 ///////////////////////////////////////////////////////////////////////////////
 
-const isEnd = (node) => !! node.querySelector('a[href="#index"]')
-const isStart = (node) => !! node.querySelector('a[name]')
+const getQuerySelectorTester = (pattern) =>
+{
+    const tester = (node) => !! node.querySelector(pattern)
+
+    tester.pattern = pattern
+    return tester
+}
+
+const getRegexTester = (pattern) =>
+{
+    const tester = (node) => pattern.test(node.innerText)
+
+    tester.pattern = pattern.toString()
+    return tester
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 
-const textPatterns = [
-    {name: 'Title', pattern: /(\d+)\. (.+) \/ (.+)/},
-    {name: 'Judgment', pattern: /THE JUDGMENT/},
-    {name: 'Image', pattern: /THE IMAGE/},
-    {name: 'Lines', pattern: /THE LINES/},
-    {name: '1. moving line', pattern: /at the beginning means:$/},
-    {name: '2. moving line', pattern: /in the second place means:$/},
-    {name: '3. moving line', pattern: /in the third place means:$/},
-    {name: '4. moving line', pattern: /in the fourth place means:$/},
-    {name: '5. moving line', pattern: /in the fifth place means:$/},
-    {name: '6. moving line', pattern: /at the top means:$/},
+const textTests = [
+    {name: 'Start', test: getQuerySelectorTester('a[name]')},
+    {name: 'Title', test: getRegexTester(/(\d+)\. (.+) \/ (.+)/)},
+    {name: 'Judgment', test: getRegexTester(/THE JUDGMENT/)},
+    {name: 'Image', test: getRegexTester(/THE IMAGE/)},
+    {name: 'Lines', test: getRegexTester(/THE LINES/)},
+    {name: '1. moving line', test: getRegexTester(/at the beginning means:$/)},
+    {name: '2. moving line', test: getRegexTester(/in the second place means:$/)},
+    {name: '3. moving line', test: getRegexTester(/in the third place means:$/)},
+    {name: '4. moving line', test: getRegexTester(/in the fourth place means:$/)},
+    {name: '5. moving line', test: getRegexTester(/in the fifth place means:$/)},
+    {name: '6. moving line', test: getRegexTester(/at the top means:$/)},
+    {name: 'End', test: getQuerySelectorTester('a[href="#index"]')},
 ]
 
-const textTester = (pattern) => (node) => pattern.test(node.innerText)
-
 ///////////////////////////////////////////////////////////////////////////////
 
-let hexgramsTextLines = []
+const isStart = textTests.find(t => t.name === 'Start').test
+const isEnd = textTests.find(t => t.name === 'End').test
+
+const hexgramsTextLines = []
 let currentHexgramTextLines
+
 getParagraphs().forEach(p =>
 {
     if(isStart(p))
     {
-        currentHexgramTextLines = [p]
+        currentHexgramTextLines = [p.innerText]
     }
     else if(isEnd(p))
     {
@@ -43,19 +60,16 @@ getParagraphs().forEach(p =>
     }
     else
     {
-        currentHexgramTextLines.push(p)
+        currentHexgramTextLines.push(p.innerText)
     }
 })
 
 ///////////////////////////////////////////////////////////////////////////////
 
 console.table(
-    textPatterns.map(({name, pattern}) => ({
-        Count: getParagraphs()
-            .filter(textTester(pattern))
-            .length,
+    textTests.map(({name, test}) => ({
+        Count: getParagraphs().filter(test).length,
         Name: name,
-        Pattern: pattern
-    })
-    )
+        Pattern: test.pattern
+    }))
 )
