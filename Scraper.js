@@ -17,9 +17,9 @@ const getQuerySelectorTester = (pattern) =>
     return tester
 }
 
-const getRegexTester = (pattern) =>
+const getRegexStringTester = (pattern) =>
 {
-    const tester = (node) => pattern.test(node.innerText)
+    const tester = (text) => pattern.test(text)
 
     tester.pattern = pattern.toString()
     return tester
@@ -29,70 +29,51 @@ const getRegexTester = (pattern) =>
 
 const textTests = [
     {
-        name: 'Start',
-        test: getQuerySelectorTester('a[name]')
-    },
-    {
         name: 'Title',
-        test: getRegexTester(parseTitle)
+        test: getRegexStringTester(parseTitle)
     },
     {
         name: 'Judgment',
-        test: getRegexTester(/THE JUDGMENT/)
+        test: getRegexStringTester(/THE JUDGMENT/)
     },
     {
         name: 'Image',
-        test: getRegexTester(/THE IMAGE/)
+        test: getRegexStringTester(/THE IMAGE/)
     },
     {
         name: 'Lines',
-        test: getRegexTester(/THE LINES/)
+        test: getRegexStringTester(/THE LINES/)
     },
     {
         name: '1. moving line',
-        test: getRegexTester(/^(Nine|Six?) at the beginning means:$/)
+        test: getRegexStringTester(/^(Nine|Six?) at the beginning means:$/)
     },
     {
         name: '2. moving line',
-        test: getRegexTester(/^(Nine|Six?) in the second place means:$/)
+        test: getRegexStringTester(/^(Nine|Six?) in the second place means:$/)
     },
     {
         name: '3. moving line',
-        test: getRegexTester(/^(Nine|Six?) in the third place means:$/)
+        test: getRegexStringTester(/^(Nine|Six?) in the third place means:$/)
     },
     {
         name: '4. moving line',
-        test: getRegexTester(/^(Nine|Six?) in the fourth place means:$/)
+        test: getRegexStringTester(/^(Nine|Six?) in the fourth place means:$/)
     },
     {
         name: '5. moving line',
-        test: getRegexTester(/^(Nine|Six?) in the fifth place means:$/)
+        test: getRegexStringTester(/^(Nine|Six?) in the fifth place means:$/)
     },
     {
         name: '6. moving line',
-        test: getRegexTester(/^(Nine|Six?) at the top means:$/)
-    },
-    {
-        name: 'End',
-        test: getQuerySelectorTester('a[href="#index"]')
+        test: getRegexStringTester(/^(Nine|Six?) at the top means:$/)
     },
 ]
 
 ///////////////////////////////////////////////////////////////////////////////
 
-const showTestsHitsTable = () =>
-    console.table(
-        textTests.map(({name, test}) => ({
-            Count: getParagraphs().filter(test).length,
-            Name: name,
-            Pattern: test.pattern
-        }))
-    )
-
-///////////////////////////////////////////////////////////////////////////////
-
-const isStart = textTests.find(t => t.name === 'Start').test
-const isEnd = textTests.find(t => t.name === 'End').test
+const isStart = getQuerySelectorTester('a[name]')
+const isEnd = getQuerySelectorTester('a[href="#index"]')
 
 const hexgramsParagraphs = []
 let currentHexgramTextLines
@@ -108,26 +89,42 @@ getParagraphs().forEach(p =>
     currentHexgramTextLines.push(p)
 })
 
-const hexgramsTextLines = hexgramsParagraphs.map(h => h.map(p => p.innerText))
+///////////////////////////////////////////////////////////////////////////////
+
+const hexgramsTextLines = hexgramsParagraphs
+    .map(h => h.map(p => p.innerText))
+    .map(h => h.map((s) => s.trim()))
+    .map(h => h.map((s) => s.split('\n').flat()).flat())
 
 ///////////////////////////////////////////////////////////////////////////////
 
-const showHexgramsTestFailures = () =>
+const showTestsHitsTable = (hexgrams) =>
     console.table(
-        hexgramsParagraphs.map((paragraphs) =>
+        textTests.map(({name, test}) => ({
+            Count: hexgrams.flat().filter(test).length,
+            Name: name,
+            Pattern: test.pattern
+        }))
+    )
+
+///////////////////////////////////////////////////////////////////////////////
+
+const showHexgramsTestFailures = (hexgrams) =>
+    console.table(
+        hexgrams.map((textLines) =>
         {
             const [
                 _,
                 Number,
                 __,
                 Title
-            ] = paragraphs[0].innerText.match(parseTitle)
+            ] = textLines[0].match(parseTitle)
 
             return {
                 Number,
                 Title,
                 Failures: textTests
-                    .filter(test => ! paragraphs.some(test.test))
+                    .filter(test => ! textLines.some(test.test))
                     .map(test => test.name)
                     .join(', ')
             }
@@ -165,36 +162,16 @@ const movingLineStarterWithMoreTextAfter = /(six|nine?) in the (second|third|fou
 
 const stuffToClean = [
     {
-        "Number": "16",
-        "Title": "Enthusiasm",
-        "Failures": "6. moving line",
-        "Problem": "the test string is not in its own paragraph",
-        "Fix": (textArrays) =>
-        {
-            const problemLine = "Six at the top means:\nDeluded enthusiasm.\nBut if after completion one changes,\nThere is no blame."
-            const fixedLines = [
-                "Six at the top means:",
-                "Deluded enthusiasm.\nBut if after completion one changes,\nThere is no blame."
-            ]
-            const hexgram = textArrays.find((textLines) => {
-                return textLines.some(s => s === problemLine)
-            })
-            const problemIndex = hexgram.indexOf(problemLine)
-            hexgram.splice(problemIndex, 1, ...fixedLines)
-        }
-    },
-    {
         "Number": "18",
         "Title": "Work on what has been spoiled [ Decay ]",
         "Failures": "1. moving line",
         "Problem": "'in' instead of 'at'",
         "Fix": (textArrays) => {
+            const hexgram = textArrays[17]
             const problemLine = "Six in the beginning means:"
-            const hexgram = textArrays.find((textLines) => {
-                return textLines.some(s => s === problemLine)
-            })
+            const fixedLine = "Six at the beginning means:"
             const problemIndex = hexgram.indexOf(problemLine)
-            hexgram[problemIndex] = "Six at the beginning means:"
+            hexgram[problemIndex] = fixedLine
         }
     },
     {
@@ -203,38 +180,63 @@ const stuffToClean = [
         "Failures": "5. moving line",
         "Problem": "It's missing, just not there; no content",
         "Fix": (textArrays) => {
-            // const hexgram = textArrays[19];
-            // insertBeforeIndex = hexgram.indexOf(s => /^at the top means:$/.test(s))
-            // hexgram.splice(insertBeforeIndex, 0, ...patches['20_Contemplation'])
+            const hexgram = textArrays[19];
+            const insertBeforeIndex = hexgram.indexOf(s => "Nine at the top means:")
+            hexgram.splice(insertBeforeIndex, 0, ...patches['20_Contemplation'])
         }
     },
     {
         "Number": "26",
         "Title": "The Taming Power of the Great",
         "Failures": "3. moving line",
-        "Problem": "the test string is not in its own paragraph",
-        "Fix": (textArrays) => {}
+        "Problem": "'.' instead of ':' at the end of the line",
+        "Fix": (textArrays) => {
+            const hexgram = textArrays[25]
+            const problemLine = "Nine in the third place means."
+            const fixedLine = "Nine in the third place means:"
+            const problemIndex = hexgram.indexOf(problemLine)
+            hexgram[problemIndex] = fixedLine
+        }
     },
     {
         "Number": "44",
         "Title": "Coming to Meet",
         "Failures": "3. moving line",
         "Problem": "the test string is not in its own paragraph and contains more content text",
-        "Fix": (textArrays) => {}
+        "Fix": (textArrays) => {
+            const hexgram = textArrays[43]
+            const problemLine = "Nine in the third place means: There is no skin on his thighs,"
+            const fixedLines = [
+                "Nine in the third place means:",
+                "There is no skin on his thighs,"
+            ]
+            const problemIndex = hexgram.indexOf(problemLine)
+            hexgram.splice(problemIndex, 1, ...fixedLines)
+        }
     },
     {
         "Number": "52",
         "Title": "Keeping Still, Mountain",
         "Failures": "2. moving line",
         "Problem": "typo: 'e' instead of 'the'",
-        "Fix": (textArrays) => {}
+        "Fix": (textArrays) => {
+            const hexgram = textArrays[51];
+            const problemLine = "Six in e second place means:"
+            const fixedLine = "Six in the second place means:"
+            const problemIndex = hexgram.indexOf(problemLine)
+            hexgram[problemIndex] = fixedLine
+        }
     },
     {
         "Number": "56",
         "Title": "The Wanderer",
         "Failures": "Judgment",
         "Problem": "It's missing, just not there; no content",
-        "Fix": (textArrays) => {}
+        "Fix": (textArrays) => {
+            const hexgram = textArrays[55];
+            const insertBeforeIndex = hexgram.indexOf(s => "THE IMAGE")
+            hexgram.splice(insertBeforeIndex, 0, ...patches['56_The_Wanderer'])
+        }
     }
 ]
 
@@ -248,6 +250,18 @@ stuffToClean.forEach((problem) =>
 
 ///////////////////////////////////////////////////////////////////////////////
 
-showTestsHitsTable()
+// console.log('Parser text hits')
+// showTestsHitsTable(hexgramsTextLines)
+// console.log()
 
-showHexgramsTestFailures()
+// console.log('Test before cleaning')
+// showHexgramsTestFailures(hexgramsTextLines)
+// console.log()
+
+// console.log('Test after cleaning')
+// showHexgramsTestFailures(hexgramsTextLinesCleaned)
+// console.log()
+
+console.log('Parser text hits')
+showTestsHitsTable(hexgramsTextLinesCleaned)
+console.log()
