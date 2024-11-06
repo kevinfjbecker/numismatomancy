@@ -180,8 +180,8 @@ const stuffToClean = [
         "Failures": "5. moving line",
         "Problem": "It's missing, just not there; no content",
         "Fix": (textArrays) => {
-            const hexgram = textArrays[19];
-            const insertBeforeIndex = hexgram.indexOf(s => "Nine at the top means:")
+            const hexgram = textArrays[19]
+            const insertBeforeIndex = hexgram.indexOf("Nine at the top means:")
             hexgram.splice(insertBeforeIndex, 0, ...patches['20_Contemplation'])
         }
     },
@@ -195,6 +195,7 @@ const stuffToClean = [
             const problemLine = "Nine in the third place means."
             const fixedLine = "Nine in the third place means:"
             const problemIndex = hexgram.indexOf(problemLine)
+            console.log(problemIndex)
             hexgram[problemIndex] = fixedLine
         }
     },
@@ -224,6 +225,7 @@ const stuffToClean = [
             const problemLine = "Six in e second place means:"
             const fixedLine = "Six in the second place means:"
             const problemIndex = hexgram.indexOf(problemLine)
+            console.log(problemIndex)
             hexgram[problemIndex] = fixedLine
         }
     },
@@ -234,7 +236,7 @@ const stuffToClean = [
         "Problem": "It's missing, just not there; no content",
         "Fix": (textArrays) => {
             const hexgram = textArrays[55];
-            const insertBeforeIndex = hexgram.indexOf(s => "THE IMAGE")
+            const insertBeforeIndex = hexgram.indexOf("THE IMAGE")
             hexgram.splice(insertBeforeIndex, 0, ...patches['56_The_Wanderer'])
         }
     }
@@ -246,6 +248,12 @@ const hexgramsTextLinesCleaned = JSON.parse(JSON.stringify(hexgramsTextLines))
 stuffToClean.forEach((problem) =>
 {
     problem.Fix(hexgramsTextLinesCleaned)
+})
+
+hexgramsTextLinesCleaned.forEach(hexgram =>
+{
+    trimIndex = hexgram.indexOf('index')
+    hexgram.splice(trimIndex, hexgram.length - trimIndex)
 })
 
 ///////////////////////////////////////////////////////////////////////////////
