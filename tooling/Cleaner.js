@@ -3,9 +3,13 @@ const fs = require('fs')
 
 ///////////////////////////////////////////////////////////////////////////////
 
-const hexgramsTextLines = JSON.parse(
-    fs.readFileSync('./HexgramsTextLines.json')
-)
+const [inputFilePath, outputFilePath] = process.argv.slice(2)
+
+const input = fs.readFileSync(inputFilePath)
+
+///////////////////////////////////////////////////////////////////////////////
+
+const hexgramsTextLines = JSON.parse(input)
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -237,10 +241,11 @@ hexgramsTextLinesCleaned.forEach(hexgram =>
 
 ///////////////////////////////////////////////////////////////////////////////
 
-fs.writeFileSync(
-    'HexgramsTextLinesCleaned.json',
-    JSON.stringify(hexgramsTextLinesCleaned, null, 4)
-)
+const output = JSON.stringify(hexgramsTextLinesCleaned, null, 4)
+
+///////////////////////////////////////////////////////////////////////////////
+
+fs.writeFileSync(outputFilePath, output)
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -256,6 +261,6 @@ fs.writeFileSync(
 // showHexgramsTestFailures(hexgramsTextLinesCleaned)
 // console.log()
 
-console.log('Parser text hits')
-showTestsHitsTable(hexgramsTextLinesCleaned)
-console.log()
+// console.log('Parser text hits')
+// showTestsHitsTable(hexgramsTextLinesCleaned)
+// console.log()

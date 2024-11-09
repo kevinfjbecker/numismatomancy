@@ -16,7 +16,6 @@ const getQuerySelectorTester = (pattern) =>
 ///////////////////////////////////////////////////////////////////////////////
 
 const isStart = getQuerySelectorTester('a[name]')
-const isEnd = getQuerySelectorTester('a[href="#index"]')
 
 const hexgramsParagraphs = []
 let currentHexgramTextLines

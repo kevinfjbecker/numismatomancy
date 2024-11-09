@@ -3,7 +3,13 @@ const fs = require('fs')
 
 ///////////////////////////////////////////////////////////////////////////////
 
-hexgramsTextLines = JSON.parse(fs.readFileSync('./HexgramsTextLinesCleaned.json'))
+const [inputFilePath, outputFilePath] = process.argv.slice(2)
+
+const input = fs.readFileSync(inputFilePath)
+
+///////////////////////////////////////////////////////////////////////////////
+
+const hexgramsTextLines = JSON.parse(input)
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -77,7 +83,11 @@ hexgramsStructured = hexgramsTextLines.map(textLines =>
 
 ///////////////////////////////////////////////////////////////////////////////
 
-fs.writeFileSync('hexgrams.json', JSON.stringify(hexgramsStructured, null, 4))
+const output = JSON.stringify(hexgramsStructured, null, 4)
+
+///////////////////////////////////////////////////////////////////////////////
+
+fs.writeFileSync(outputFilePath, output)
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -91,5 +101,8 @@ fs.writeFileSync('hexgrams.json', JSON.stringify(hexgramsStructured, null, 4))
 //     .filter(h => h.Title.textLines.length > 4)
 //     .map(h => h.Title.textLines[0]))
 
-
-console.log([...new Set(hexgramsStructured.map(h => h.Title.textLines[1]))])
+console.log('Trigram name inconsitencies')
+console.log([...new Set(
+    hexgramsStructured.map(h => h.Title.textLines[1]),
+    hexgramsStructured.map(h => h.Title.textLines[2])
+)])

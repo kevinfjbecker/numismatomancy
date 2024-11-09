@@ -1,0 +1,14 @@
+{
+    "steps": [
+        {
+            "input":"./HexgramsTextLines.json",
+            "output":"./HexgramsTextLinesCleaned.json",
+            "processor":"./Cleaner.js"
+        },
+        {
+            "input":"./HexgramsTextLinesCleaned.json",
+            "output":"../hexgrams.json",
+            "processor":"./Structurer.js"
+        }
+    ]
+}
