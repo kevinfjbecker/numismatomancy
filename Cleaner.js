@@ -214,6 +214,21 @@ stuffToClean.forEach((problem) =>
     problem.Fix(hexgramsTextLinesCleaned)
 })
 
+/*
+ * remove empty lines
+ */
+hexgramsTextLinesCleaned.forEach(hexgram =>
+{
+    while(hexgram.some(line => line === ''))
+    {
+        trimIndex = hexgram.indexOf('')
+        hexgram.splice(trimIndex, 1)
+    }
+})
+
+/*
+ * remove "index" from the ends
+ */
 hexgramsTextLinesCleaned.forEach(hexgram =>
 {
     trimIndex = hexgram.indexOf('index')
