@@ -137,6 +137,17 @@ const stuffToClean = [
         }
     },
     {
+        "Number": "23",
+        "Title": "Splitting Apart",
+        "Failures": "Trigrams",
+        "Problem": "Is fire, sould be earth",
+        "Fix": (textArrays) => {
+            const hexgram = textArrays[22]
+            const problemIndex = hexgram.indexOf("below LI THE CLINGING, FIRE")
+            hexgram[problemIndex] = "below K'UN THE RECEPTIVE, EARTH"            
+        }
+    },
+    {
         "Number": "26",
         "Title": "The Taming Power of the Great",
         "Failures": "3. moving line",
@@ -241,6 +252,31 @@ hexgramsTextLinesCleaned.forEach(hexgram =>
     trimIndex = hexgram.indexOf('index')
     hexgram.splice(trimIndex, hexgram.length - trimIndex)
 })
+
+/*
+ * Make trigram above|below names consistent
+ */
+const inconsistentTrigramNames = [
+    [ 'KêN KEEPING STILL, MOUNTAIN', 'KÊN KEEPING STILL, MOUNTAIN' ],
+    [ 'CHêN THE AROUSING, THUNDER', 'CHÊN THE AROUSING, THUNDER' ],
+    [ 'Kên KEEPING STILL, MOUNTAIN', 'KÊN KEEPING STILL, MOUNTAIN' ],
+    [ 'CHEN THE AROUSING, THUNDER', 'CHÊN THE AROUSING, THUNDER' ],
+    [ 'KEN KEEPING STILL, MOUNTAIN', 'KÊN KEEPING STILL, MOUNTAIN' ],
+    [ 'Sun THE GENTLE, WIND', 'SUN THE GENTLE, WIND' ]
+]
+hexgramsTextLinesCleaned.forEach(hexgram =>
+    {
+        hexgram.forEach((line, i) =>
+        {
+            inconsistentTrigramNames.forEach(([problem, fixed]) =>
+            {
+                if(line.includes(problem))
+                {
+                    hexgram[i] = line.replace(problem, fixed)
+                }
+            })
+        })
+    })
 
 ///////////////////////////////////////////////////////////////////////////////
 

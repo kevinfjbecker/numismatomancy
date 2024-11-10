@@ -87,6 +87,21 @@ hexgramsStructured = hexgramsTextLines.map(textLines =>
 
 ///////////////////////////////////////////////////////////////////////////////
 
+// todo: use this to wire up the Coinreading with the I Ching text
+const trigramsNames =
+[
+  { "binary": "111", "name": "CH'IEN" },
+  { "binary": "110", "name": "TUI" },
+  { "binary": "101", "name": "LI" },
+  { "binary": "100", "name": "KÊN" },
+  { "binary": "011", "name": "SUN" },
+  { "binary": "010", "name": "K'AN" },
+  { "binary": "001", "name": "CHÊN" },
+  { "binary": "000", "name": "K'UN" }
+]
+
+///////////////////////////////////////////////////////////////////////////////
+
 const output = JSON.stringify(hexgramsStructured, null, 4)
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -105,11 +120,22 @@ fs.writeFileSync(outputFilePath, output)
 //     .filter(h => h.Title.textLines.length > 4)
 //     .map(h => h.Title.textLines[0]))
 
-console.log('Trigram name inconsitencies')
-console.log([...new Set(
-    hexgramsStructured.map(h => h.Title.textLines[1]),
-    hexgramsStructured.map(h => h.Title.textLines[2])
-)])
+console.log('Trigram name counts')
+const nameCounts = {}; // semicolon needed between object literal and array literal
+[
+    ...hexgramsStructured.map(h => h.Title.textLines[1].slice(6)),
+    ...hexgramsStructured.map(h => h.Title.textLines[2].slice(6))
+]
+.sort()
+.forEach(name =>
+    nameCounts[name] = nameCounts[name] ? nameCounts[name] + 1 : 1
+)
+console.table(Object.entries(nameCounts).sort((a,b)=>a[0]>b[0]))
+console.log(`Total: ${
+    Object.entries(nameCounts)
+        .map(e=>+e[1])
+        .reduce((a,b)=>a+b)}`)
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
