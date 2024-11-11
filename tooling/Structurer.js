@@ -17,10 +17,15 @@ const hexgramsTextLines = JSON.parse(input)
 
 ///////////////////////////////////////////////////////////////////////////////
 
+const titleRegex = /(\d+)\. (.+) \/ (.+)/
+const trigramRegex = /(above|below) ([^\s]+) (.+), (.+)/
+
+///////////////////////////////////////////////////////////////////////////////
+
 const textTests = [
     {
         name: 'Title',
-        test: /(\d+)\. (.+) \/ (.+)/
+        test: titleRegex
     },
     {
         name: 'Judgment',
@@ -62,6 +67,9 @@ const textTests = [
 
 ///////////////////////////////////////////////////////////////////////////////
 
+/*
+ * Group into sections
+ */
 hexgramsStructured = hexgramsTextLines.map(textLines =>
 {
     const hexgram = {}
@@ -83,6 +91,30 @@ hexgramsStructured = hexgramsTextLines.map(textLines =>
     }
 
     return hexgram
+})
+
+/*
+ * Split up title section
+ */
+hexgramsStructured.forEach((hexgram, i) =>
+{
+    const titleParts = hexgram.Title.textLines[0].match(titleRegex)
+    const trigramAbove = hexgram.Title.textLines[1].match(trigramRegex)
+    const trigramBelow = hexgram.Title.textLines[2].match(trigramRegex)
+    
+    hexgram.Title.number = titleParts[1]
+    hexgram.Title.name = titleParts[2]
+    hexgram.Title.title = titleParts[3]
+    hexgram.Title.trigramAbove = {
+        name: trigramAbove[2],
+        aspect: trigramAbove[3],
+        element: trigramAbove[4]
+    }
+    hexgram.Title.trigramBelow = {
+        name: trigramBelow[2],
+        aspect: trigramBelow[3],
+        element: trigramBelow[4]
+    }
 })
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -120,22 +152,21 @@ fs.writeFileSync(outputFilePath, output)
 //     .filter(h => h.Title.textLines.length > 4)
 //     .map(h => h.Title.textLines[0]))
 
-console.log('Trigram name counts')
-const nameCounts = {}; // semicolon needed between object literal and array literal
-[
-    ...hexgramsStructured.map(h => h.Title.textLines[1].slice(6)),
-    ...hexgramsStructured.map(h => h.Title.textLines[2].slice(6))
-]
-.sort()
-.forEach(name =>
-    nameCounts[name] = nameCounts[name] ? nameCounts[name] + 1 : 1
-)
-console.table(Object.entries(nameCounts).sort((a,b)=>a[0]>b[0]))
-console.log(`Total: ${
-    Object.entries(nameCounts)
-        .map(e=>+e[1])
-        .reduce((a,b)=>a+b)}`)
-
+// console.log('Trigram name counts')
+// const nameCounts = {}; // semicolon needed between object literal and array literal
+// [
+//     ...hexgramsStructured.map(h => h.Title.textLines[1].slice(6)),
+//     ...hexgramsStructured.map(h => h.Title.textLines[2].slice(6))
+// ]
+// .sort()
+// .forEach(name =>
+//     nameCounts[name] = nameCounts[name] ? nameCounts[name] + 1 : 1
+// )
+// console.table(Object.entries(nameCounts).sort((a,b)=>a[0]>b[0]))
+// console.log(`Total: ${
+//     Object.entries(nameCounts)
+//         .map(e=>+e[1])
+//         .reduce((a,b)=>a+b)}`)
 
 ///////////////////////////////////////////////////////////////////////////////
 

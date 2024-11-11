@@ -20,6 +20,15 @@ linesStrings[YANG] = YANG_STRING
 linesStrings[MOVING_YIN] = MOVING_YIN_STRING
 linesStrings[MOVING_YANG] = MOVING_YANG_STRING
 
+const YIN_BINARY = 0
+const YANG_BINARY = 1
+
+const linesBinary = {}
+linesBinary[YIN] = YIN_BINARY
+linesBinary[YANG] = YANG_BINARY
+linesBinary[MOVING_YIN] = YIN_BINARY
+linesBinary[MOVING_YANG] = YANG_BINARY
+
 ///////////////////////////////////////////////////////////////////////////////
 
 const coinFlip = () => Math.random() <  0.5 ? 0 : 1
@@ -71,6 +80,19 @@ const getOrdinalSuffix = n => {
     return n + (suffixes[(value - 20) % 10] || suffixes[value] || suffixes[0])
 }
 
+const getTextLines = reading =>
+    reading
+        .map(line => linesStrings[line.line])
+        .join('\n')
+
+const getBinary = reading =>
+    reading
+        .map(line => linesBinary[line.line])
+        .reverse()
+        .join('')
+
+///////////////////////////////////////////////////////////////////////////////
+
 const coinReading =
     castCoins()
         .map((row, i) => ({
@@ -79,15 +101,14 @@ const coinReading =
             coins: row.map(coinString),
             position: 6 - i
         }))
-
-const getTextLines = reading =>
-    reading
-        .map(line => linesStrings[line.line])
-        .join('\n')
+    
+coinReading_binary = getBinary(coinReading)
 
 ///////////////////////////////////////////////////////////////////////////////
 
 console.log(getTextLines(coinReading))
+console.log()
+console.log(getBinary(coinReading))
 console.log()
 console.log(
     coinReading.map(({line, position}) =>
