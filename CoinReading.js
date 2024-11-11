@@ -1,6 +1,14 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 
+const fs = require('fs')
+
+///////////////////////////////////////////////////////////////////////////////
+
+const hexgrams = JSON.parse(fs.readFileSync('./hexgrams.json'))
+
+///////////////////////////////////////////////////////////////////////////////
+
 const HEADS = 1
 const TAILS = 0
 
@@ -91,6 +99,13 @@ const getBinary = reading =>
         .reverse()
         .join('')
 
+const getCoinsBinary = reading =>
+    reading
+        .map(line => line.coinCast)
+        .reverse()
+        .flat()
+        .join('')
+
 ///////////////////////////////////////////////////////////////////////////////
 
 const coinReading =
@@ -101,18 +116,30 @@ const coinReading =
             coins: row.map(coinString),
             position: 6 - i
         }))
-    
-coinReading_binary = getBinary(coinReading)
 
 ///////////////////////////////////////////////////////////////////////////////
 
-console.log(getTextLines(coinReading))
+const hexgram = hexgrams.find(h => h.Title.binary === getBinary(coinReading))
+
+///////////////////////////////////////////////////////////////////////////////
+
+const movingLinesText = coinReading
+    .filter(line => line.line.includes('MOVING'))
+    .map(line => hexgram[line.position + '. moving line'])
+    .reverse()
+
+///////////////////////////////////////////////////////////////////////////////
+
+console.log(hexgram.Title.textLines.join('\n\n'))
 console.log()
-console.log(getBinary(coinReading))
+console.log(hexgram.Judgment.textLines.join('\n\n'))
+console.log()
+console.log(hexgram.Image.textLines.join('\n\n'))
+console.log()
+console.log(hexgram.Lines.textLines[0])
 console.log()
 console.log(
-    coinReading.map(({line, position}) =>
-        `${getOrdinalSuffix(position)} ${line}`)
+    movingLinesText
+        .map(line => line.textLines.join('\n\n'))
+        .join('\n\n')
 )
-console.log()
-console.log(coinReading)

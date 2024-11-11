@@ -13,13 +13,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111111"
         },
         "Judgment": {
             "textLines": [
@@ -109,13 +112,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000000"
         },
         "Judgment": {
             "textLines": [
@@ -212,13 +218,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001010"
         },
         "Judgment": {
             "textLines": [
@@ -320,13 +329,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010100"
         },
         "Judgment": {
             "textLines": [
@@ -425,13 +437,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111010"
         },
         "Judgment": {
             "textLines": [
@@ -525,13 +540,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010111"
         },
         "Judgment": {
             "textLines": [
@@ -633,13 +651,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010000"
         },
         "Judgment": {
             "textLines": [
@@ -734,13 +755,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000010"
         },
         "Judgment": {
             "textLines": [
@@ -840,13 +864,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
+                "element": "WIND",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111011"
         },
         "Judgment": {
             "textLines": [
@@ -939,13 +966,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110111"
         },
         "Judgment": {
             "textLines": [
@@ -1038,13 +1068,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111000"
         },
         "Judgment": {
             "textLines": [
@@ -1145,13 +1178,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000111"
         },
         "Judgment": {
             "textLines": [
@@ -1247,13 +1283,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FLAME"
-            }
+                "element": "FLAME",
+                "binary": "101"
+            },
+            "binary": "101111"
         },
         "Judgment": {
             "textLines": [
@@ -1346,13 +1385,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FLAME"
+                "element": "FLAME",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111101"
         },
         "Judgment": {
             "textLines": [
@@ -1446,13 +1488,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100000"
         },
         "Judgment": {
             "textLines": [
@@ -1544,13 +1589,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000001"
         },
         "Judgment": {
             "textLines": [
@@ -1651,13 +1699,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001110"
         },
         "Judgment": {
             "textLines": [
@@ -1752,13 +1803,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
-            }
+                "element": "WIND",
+                "binary": "011"
+            },
+            "binary": "011100"
         },
         "Judgment": {
             "textLines": [
@@ -1851,13 +1905,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110000"
         },
         "Judgment": {
             "textLines": [
@@ -1955,13 +2012,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
+                "element": "WIND",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000011"
         },
         "Judgment": {
             "textLines": [
@@ -2056,13 +2116,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
+                "element": "FIRE",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001101"
         },
         "Judgment": {
             "textLines": [
@@ -2159,13 +2222,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
-            }
+                "element": "FIRE",
+                "binary": "101"
+            },
+            "binary": "101100"
         },
         "Judgment": {
             "textLines": [
@@ -2255,13 +2321,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000100"
         },
         "Judgment": {
             "textLines": [
@@ -2351,13 +2420,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001000"
         },
         "Judgment": {
             "textLines": [
@@ -2455,13 +2527,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001111"
         },
         "Judgment": {
             "textLines": [
@@ -2556,13 +2631,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111100"
         },
         "Judgment": {
             "textLines": [
@@ -2655,13 +2733,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001100"
         },
         "Judgment": {
             "textLines": [
@@ -2764,13 +2845,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE, WIND",
-                "element": "WOOD"
-            }
+                "element": "WOOD",
+                "binary": "011"
+            },
+            "binary": "011110"
         },
         "Judgment": {
             "textLines": [
@@ -2865,13 +2949,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010010"
         },
         "Judgment": {
             "textLines": [
@@ -2968,13 +3055,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
+                "element": "FIRE",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
-            }
+                "element": "FIRE",
+                "binary": "101"
+            },
+            "binary": "101101"
         },
         "Judgment": {
             "textLines": [
@@ -3065,13 +3155,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100110"
         },
         "Judgment": {
             "textLines": [
@@ -3165,13 +3258,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
-            }
+                "element": "WIND",
+                "binary": "011"
+            },
+            "binary": "011001"
         },
         "Judgment": {
             "textLines": [
@@ -3257,13 +3353,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100111"
         },
         "Judgment": {
             "textLines": [
@@ -3350,13 +3449,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111001"
         },
         "Judgment": {
             "textLines": [
@@ -3451,13 +3553,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
+                "element": "FIRE",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000101"
         },
         "Judgment": {
             "textLines": [
@@ -3554,13 +3659,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
-            }
+                "element": "FIRE",
+                "binary": "101"
+            },
+            "binary": "101000"
         },
         "Judgment": {
             "textLines": [
@@ -3655,13 +3763,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
+                "element": "WIND",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
-            }
+                "element": "FIRE",
+                "binary": "101"
+            },
+            "binary": "101011"
         },
         "Judgment": {
             "textLines": [
@@ -3752,13 +3863,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FLAME"
+                "element": "FLAME",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110101"
         },
         "Judgment": {
             "textLines": [
@@ -3859,13 +3973,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100010"
         },
         "Judgment": {
             "textLines": [
@@ -3956,13 +4073,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010001"
         },
         "Judgment": {
             "textLines": [
@@ -4059,13 +4179,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110100"
         },
         "Judgment": {
             "textLines": [
@@ -4169,13 +4292,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
+                "element": "WIND",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001011"
         },
         "Judgment": {
             "textLines": [
@@ -4276,13 +4402,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
-            }
+                "element": "HEAVEN",
+                "binary": "111"
+            },
+            "binary": "111110"
         },
         "Judgment": {
             "textLines": [
@@ -4387,13 +4516,16 @@
             "trigramAbove": {
                 "name": "CH'IEN",
                 "aspect": "THE CREATIVE",
-                "element": "HEAVEN"
+                "element": "HEAVEN",
+                "binary": "111"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
-            }
+                "element": "WIND",
+                "binary": "011"
+            },
+            "binary": "011111"
         },
         "Judgment": {
             "textLines": [
@@ -4487,13 +4619,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
-            }
+                "element": "EARTH",
+                "binary": "000"
+            },
+            "binary": "000110"
         },
         "Judgment": {
             "textLines": [
@@ -4595,13 +4730,16 @@
             "trigramAbove": {
                 "name": "K'UN",
                 "aspect": "THE RECEPTIVE",
-                "element": "EARTH"
+                "element": "EARTH",
+                "binary": "000"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE, WIND",
-                "element": "WOOD"
-            }
+                "element": "WOOD",
+                "binary": "011"
+            },
+            "binary": "011000"
         },
         "Judgment": {
             "textLines": [
@@ -4694,13 +4832,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010110"
         },
         "Judgment": {
             "textLines": [
@@ -4802,13 +4943,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE, WIND",
-                "element": "WOOD"
-            }
+                "element": "WOOD",
+                "binary": "011"
+            },
+            "binary": "011010"
         },
         "Judgment": {
             "textLines": [
@@ -4905,13 +5049,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
-            }
+                "element": "FIRE",
+                "binary": "101"
+            },
+            "binary": "101110"
         },
         "Judgment": {
             "textLines": [
@@ -5008,13 +5155,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
+                "element": "FIRE",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE, WIND",
-                "element": "WOOD"
-            }
+                "element": "WOOD",
+                "binary": "011"
+            },
+            "binary": "011101"
         },
         "Judgment": {
             "textLines": [
@@ -5112,13 +5262,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
-            }
+                "element": "THUNDER",
+                "binary": "001"
+            },
+            "binary": "001001"
         },
         "Judgment": {
             "textLines": [
@@ -5220,13 +5373,16 @@
             "trigramAbove": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
+                "element": "MOUNTAIN",
+                "binary": "100"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100100"
         },
         "Judgment": {
             "textLines": [
@@ -5322,13 +5478,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE, WIND",
-                "element": "WOOD"
+                "element": "WOOD",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100011"
         },
         "Judgment": {
             "textLines": [
@@ -5429,13 +5588,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110001"
         },
         "Judgment": {
             "textLines": [
@@ -5532,13 +5694,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
-            }
+                "element": "FIRE",
+                "binary": "101"
+            },
+            "binary": "101001"
         },
         "Judgment": {
             "textLines": [
@@ -5642,13 +5807,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
+                "element": "FIRE",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100101"
         },
         "Judgment": {
             "textLines": [
@@ -5748,13 +5916,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE, WIND",
-                "element": "WOOD"
+                "element": "WOOD",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "SUN",
                 "aspect": "THE GENTLE, WIND",
-                "element": "WOOD"
-            }
+                "element": "WOOD",
+                "binary": "011"
+            },
+            "binary": "011011"
         },
         "Judgment": {
             "textLines": [
@@ -5852,13 +6023,16 @@
             "trigramAbove": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
+                "element": "LAKE",
+                "binary": "110"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110110"
         },
         "Judgment": {
             "textLines": [
@@ -5942,13 +6116,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
+                "element": "WIND",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010011"
         },
         "Judgment": {
             "textLines": [
@@ -6042,13 +6219,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110010"
         },
         "Judgment": {
             "textLines": [
@@ -6138,13 +6318,16 @@
             "trigramAbove": {
                 "name": "SUN",
                 "aspect": "THE GENTLE",
-                "element": "WIND"
+                "element": "WIND",
+                "binary": "011"
             },
             "trigramBelow": {
                 "name": "TUI",
                 "aspect": "THE JOYOUS",
-                "element": "LAKE"
-            }
+                "element": "LAKE",
+                "binary": "110"
+            },
+            "binary": "110011"
         },
         "Judgment": {
             "textLines": [
@@ -6241,13 +6424,16 @@
             "trigramAbove": {
                 "name": "CHÊN",
                 "aspect": "THE AROUSING",
-                "element": "THUNDER"
+                "element": "THUNDER",
+                "binary": "001"
             },
             "trigramBelow": {
                 "name": "KÊN",
                 "aspect": "KEEPING STILL",
-                "element": "MOUNTAIN"
-            }
+                "element": "MOUNTAIN",
+                "binary": "100"
+            },
+            "binary": "100001"
         },
         "Judgment": {
             "textLines": [
@@ -6351,13 +6537,16 @@
             "trigramAbove": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
+                "element": "WATER",
+                "binary": "010"
             },
             "trigramBelow": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FIRE"
-            }
+                "element": "FIRE",
+                "binary": "101"
+            },
+            "binary": "101010"
         },
         "Judgment": {
             "textLines": [
@@ -6453,13 +6642,16 @@
             "trigramAbove": {
                 "name": "LI",
                 "aspect": "THE CLINGING",
-                "element": "FLAME"
+                "element": "FLAME",
+                "binary": "101"
             },
             "trigramBelow": {
                 "name": "K'AN",
                 "aspect": "THE ABYSMAL",
-                "element": "WATER"
-            }
+                "element": "WATER",
+                "binary": "010"
+            },
+            "binary": "010101"
         },
         "Judgment": {
             "textLines": [

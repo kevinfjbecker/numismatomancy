@@ -67,6 +67,20 @@ const textTests = [
 
 ///////////////////////////////////////////////////////////////////////////////
 
+const trigramNamesBinary =
+{
+  "CH'IEN": "111",
+  "TUI": "110",
+  "LI": "101",
+  "KÊN": "100",
+  "SUN": "011",
+  "K'AN": "010",
+  "CHÊN": "001",
+  "K'UN": "000",
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
 /*
  * Group into sections
  */
@@ -105,32 +119,25 @@ hexgramsStructured.forEach((hexgram, i) =>
     hexgram.Title.number = titleParts[1]
     hexgram.Title.name = titleParts[2]
     hexgram.Title.title = titleParts[3]
+
     hexgram.Title.trigramAbove = {
         name: trigramAbove[2],
         aspect: trigramAbove[3],
-        element: trigramAbove[4]
+        element: trigramAbove[4],
+        binary: trigramNamesBinary[trigramAbove[2]]
     }
+
     hexgram.Title.trigramBelow = {
         name: trigramBelow[2],
         aspect: trigramBelow[3],
-        element: trigramBelow[4]
+        element: trigramBelow[4],
+        binary: trigramNamesBinary[trigramBelow[2]]
     }
+
+    hexgram.Title.binary =
+        hexgram.Title.trigramBelow.binary +
+        hexgram.Title.trigramAbove.binary
 })
-
-///////////////////////////////////////////////////////////////////////////////
-
-// todo: use this to wire up the Coinreading with the I Ching text
-const trigramsNames =
-[
-  { "binary": "111", "name": "CH'IEN" },
-  { "binary": "110", "name": "TUI" },
-  { "binary": "101", "name": "LI" },
-  { "binary": "100", "name": "KÊN" },
-  { "binary": "011", "name": "SUN" },
-  { "binary": "010", "name": "K'AN" },
-  { "binary": "001", "name": "CHÊN" },
-  { "binary": "000", "name": "K'UN" }
-]
 
 ///////////////////////////////////////////////////////////////////////////////
 
